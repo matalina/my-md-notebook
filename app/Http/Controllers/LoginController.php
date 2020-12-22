@@ -38,7 +38,7 @@ class LoginController extends Controller
             return $validated;
         }
         try {
-            $user = Socialite::driver($provider)->stateless()->user();
+            $user = Socialite::driver($provider)->user();
         } catch (ClientException $exception) {
             return response()->json(['error' => 'Invalid credentials provided.'], 422);
         }
@@ -73,8 +73,8 @@ class LoginController extends Controller
      */
     protected function validateProvider($provider)
     {
-        if (!in_array($provider, ['facebook', 'twitter', 'google'])) {
-            return response()->json(['error' => 'Please login using facebook, twitter or google'], 422);
+        if (!in_array($provider, ['facebook', 'google'])) {
+            return response()->json(['error' => 'Please login using facebook or google'], 422);
         }
     }
 }
