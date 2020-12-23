@@ -1,2 +1,2 @@
-# challenge-tracker-api
-An api for tracking words, pages, editing, hours, days etc.
+# my markdown notebook  
+An api for making notes in markdown anyway you want.
